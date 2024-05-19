@@ -2,6 +2,7 @@ const draggable = document.querySelectorAll(".todo")
 
 const droppable = document.querySelectorAll(".todos")
 
+console.log("todos" , draggable);
 
 draggable.forEach((task)=>{
     task.addEventListener("dragstart" ,() => {
@@ -39,11 +40,7 @@ function insertAboveTask(zone , mouseY){
 
     other_tasks.forEach((task) => {
         const {top} = task.getBoundingClientRect();
-        console.log("top",top);
-        console.log("mousey" , mouseY);
         const offset = mouseY - top ; 
-        console.log("offset" , offset);
-
         if( offset < 0 && offset > closestOffset ){
             closestTaks = task ;
             closestOffset = offset ; 
